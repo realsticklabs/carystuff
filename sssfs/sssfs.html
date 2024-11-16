@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Super Short Stick Figure Show</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+<body>
+    <h1>Ruffle SWF Loader</h1>
+    <div id="flash-container">
+        <!-- Placeholder for Ruffle -->
+        <object id="ruffle-player" data="sssfs.swf" type="application/x-shockwave-flash" width="800" height="600">
+            <param name="movie" value="sssfs.swf">
+        </object>
+    </div>
+
+    <script>
+        // Automatically replace the <object> tag with Ruffle
+        const ruffle = window.RufflePlayer.newest();
+        const flashObject = document.getElementById("ruffle-player");
+        const ruffleInstance = ruffle.createPlayer();
+        flashObject.parentNode.replaceChild(ruffleInstance, flashObject);
+        ruffleInstance.load("sssfs.swf");
+    </script>
+</body>
+</html>
